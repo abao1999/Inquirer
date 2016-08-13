@@ -1,0 +1,221 @@
+/*-----------------------------------------------------------------------------------
+
+  Template Name: Clinico - Responsive Medical and Health Template
+  Template URI: http://themeforest.net/user/CreativeWS/portfolio
+  Description: Clinico is a powerful multipurpose responsive template suitable for medical and health related businesses. Its fresh and clean design makes it applicable for corporate websites, personal blogs, product-oriented sites as well.
+  Author: Creative Web Solutions
+  Author URI: http://creaws.com
+
+-----------------------------------------------------------------------------------
+
+-- General
+  -- fonts
+  -- COMPOSER
+  -- defaults
+  -- forms
+  -- buttons
+  -- page
+  -- grid
+  -- typography
+  -- clearfix
+-- Plugins
+  -- isotope
+  -- owl carousel
+-- HEADER
+  -- layout
+  -- logo
+  -- main nav
+  -- mobile main nav
+  -- quick search
+-- CONTENT
+  -- layout
+  -- page title
+  -- slider
+  -- benefits
+  -- services
+  -- news
+  -- photo tour
+  -- Services Carousel
+  -- Features unlimited color
+  -- page-404
+  -- Retina ready and responsive
+  -- captcha
+  -- blog post
+  -- comments
+  -- add comment
+  -- doctors
+  -- doctors carousel
+  -- timetable
+  -- map
+  -- feedback
+
+
+
+
+
+
+*/
+
+/*************************************************************************/
+
+/**/
+/* fonts */
+/**/
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic&subset=latin,latin-ext);
+
+
+/*----------------------------------------------------------------------------*/
+/*                                   CONTENT                                  */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* layout */
+/**/
+.page-content {
+  padding-bottom: 30px;
+}
+
+
+/**/
+/* page title */
+/**/
+.page-title {
+  margin-bottom: 50px;
+  border-top-width: 7px;
+  border-top-style: solid;
+  color: #fff;
+}
+.page-title h1 {
+  float: left;
+  padding: 18px 0;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+.page-title nav {
+  float: right;
+  margin-right: 150px;
+  padding: 22px 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+.page-title nav a {
+  color: #fff;
+}
+.page-title nav a:hover {
+  text-decoration: underline;
+}
+.page-title .grid-row {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 1190px) { /* laptop */
+  .page-title nav {
+    margin-right: 140px;
+  }
+}
+@media screen and (max-width: 980px) { /* pad */
+  .page-title h1 {
+    float: none;
+    padding-bottom: 10px;
+  }
+  .page-title nav {
+    float: none;
+    margin-right: 0;
+    padding-top: 0;
+    padding-bottom: 18px;
+  }
+}
+
+
+
+/**/
+/* slider */
+/**/
+
+.ls-bottom-nav-wrapper{
+  display:none !important;
+}
+.slider .intro {
+  font-size:15px;
+  position:relative;
+  width: 30.33em;
+  padding: 2.33em 0;
+  background: rgba(255,255,255,0.5);
+  text-align: center;
+}
+.slider .intro h2 {
+  font-size: 3.8em;
+  line-height: 0.96em;
+  font-weight: 700;
+  text-shadow: 0 1px 0 #fff;
+}
+.slider .intro h2 span {
+  display: block;
+  font-size: 0.685em;
+  line-height: 0.95em;
+  font-weight: 400;
+}
+.slider .intro p {
+  margin-top: 0.585em;
+  font-size: 1.13em;
+  line-height: 1.35em;
+  text-shadow: 0 1px 0 #fff;
+}
+.slider .intro .icon {
+  position: absolute;
+  top: -0.5em;
+  left: 50%;
+  display: block;
+  margin-left: -0.5em;
+  font-size: 3.2em;
+  line-height: 1em;
+}
+.slider .buttons {
+  margin-top:1em;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.slider .buttons .button{
+  display: inline-block;
+  vertical-align: top;
+  padding:0 0.61em !important;
+  height: 2.44em;
+  vertical-align: middle;
+  margin: 0 1px;
+  border-width: 3px;
+  border-style: solid;
+  font-size: 1.2em;
+  line-height: 2.44em;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  box-sizing:border-box;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.slider .prev,
+.slider .next {
+  display: inline-block;
+  vertical-align: top;
+  width: 1.83em;
+  height: 1.83em;
+  margin: 0 1px;
+  border-width: 3px;
+  border-style: solid;
+  font-size: 1.6em;
+  line-height: 1.75em;
+  color: #fff;
+}
+.slider .prev:hover,
+.slider .next:hover {
+  background: #fff;
+}
+
+@media only screen and (max-width:1190px){
+  .slider .intro{
+    margin-left:-50px !important;
+  }
+}
