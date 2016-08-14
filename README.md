@@ -9,4 +9,4 @@ Future Features:
 - Editors and writers will have special accounts that have additional features, such as a form to submit new stories to the inquirer, a way to edit stories, manage stories, and the ability to create a writers' profile that readers/subscribers can view.
 
 
-hello!!!???...
+hello!!!???
