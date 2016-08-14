@@ -8,8 +8,5 @@ Future Features:
 - You can view the profile of each writer and look at the editors
 - Editors and writers will have special accounts that have additional features, such as a form to submit new stories to the inquirer, a way to edit stories, manage stories, and the ability to create a writers' profile that readers/subscribers can view.
 
-<<<<<<< HEAD
-helloworld!!!
-=======
-hello
->>>>>>> parent of a408c85... edit
+
+hello!!!???
