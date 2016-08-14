@@ -5,11 +5,17 @@ body {
     background: #253F3F;
     color: white;
 }
-.navbar p, .navbar .container p, .navbar .container .nav p, .navbar .container .nav li p {
+.navbar .container p, .navbar .container .nav li p {
     color: white;
 }
-.navbar a, .navbar .container a, .navbar .container .nav a, .navbar .container .nav li a {
+.navbar .container a, .navbar .container .nav li a {
     color: white;
+}
+.navbar .container .nav li> .active> p {
+    color: #18F6EC;
+}
+.navbar .container .nav li> .active> a {
+    color: #18F6EC;
 }
 .col-sm-6 {
     padding-bottom: 20px;
