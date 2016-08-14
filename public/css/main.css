@@ -3,7 +3,10 @@ body {
 }
 .navbar {
   background:#253F3F;
+  color:white;
 }
+
+
 .col-sm-6 {
   padding-bottom: 20px;
 }
