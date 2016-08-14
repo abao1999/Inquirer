@@ -3863,8 +3863,9 @@ tbody.collapse.in {
 .navbar-default .navbar-brand {
     color: #252525;
 }
+/*HOVER and FOCUS text color effect on BRAND*/
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #18F6EC;
+    /*color: #18F6EC;*/
     background-color: transparent;
 }
 .navbar-default .navbar-text {
