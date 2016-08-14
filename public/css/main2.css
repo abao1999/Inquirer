@@ -3063,7 +3063,6 @@ tbody.collapse.in {
 .dropdown-menu> li> a:hover, .dropdown-menu> li> a:focus {
     text-decoration: none;
     color: #262626;
-    background-color: #f5f5f5;
 }
 .dropdown-menu> .active> a, .dropdown-menu> .active> a:hover, .dropdown-menu> .active> a:focus {
     color: #fff;

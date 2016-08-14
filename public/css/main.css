@@ -3,11 +3,9 @@ body {
 }
 .navbar {
     background: #253F3F;
-    color: white;
 }
 .navbar .dropdown-menu {
     background: #253F3F;
-    color: white;
 }
 .navbar .container a {
     color: white;
