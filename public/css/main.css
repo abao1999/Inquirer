@@ -1,18 +1,18 @@
 body {
-  background:#f5f5f5;
+    background: #f5f5f5;
 }
 .navbar {
-  background:#253F3F;
-  color:white;
+    background: #253F3F;
+    color: white;
 }
-.navbar p, .navbar .container p {
-  color:white;
+.navbar p, .navbar.container p, .navbar.container.nav p, .navbar.container.nav li p {
+    color: white;
 }
-.navbar a, .navbar .container a {
-  color:white;
+.navbar a, .navbar.container a, .navbar.container.nav a, .navbar.container.nav li a {
+    color: white;
 }
 .col-sm-6 {
-  padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 .col-sm-6 img {
     width: 100%;
