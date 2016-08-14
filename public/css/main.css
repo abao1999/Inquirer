@@ -5,8 +5,12 @@ body {
   background:#253F3F;
   color:white;
 }
-
-
+.navbar p, .navbar .container p {
+  color:white;
+}
+.navbar a, .navbar .container a {
+  color:white;
+}
 .col-sm-6 {
   padding-bottom: 20px;
 }
