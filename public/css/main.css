@@ -5,10 +5,10 @@ body {
     background: #253F3F;
     color: white;
 }
-.navbar p, .navbar.container p, .navbar.container.nav p, .navbar.container.nav li p {
+.navbar p, .navbar .container p, .navbar .container .nav p, .navbar .container .nav li p {
     color: white;
 }
-.navbar a, .navbar.container a, .navbar.container.nav a, .navbar.container.nav li a {
+.navbar a, .navbar .container a, .navbar .container .nav a, .navbar .container .nav li a {
     color: white;
 }
 .col-sm-6 {
