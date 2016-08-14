@@ -3,17 +3,27 @@ body {
 }
 .navbar {
     background: #253F3F;
-    color: white;
+}
+.navbar .dropdown-menu {
+    background: #253F3F;
 }
 .navbar .container a {
-  color: white;
+    color: white;
 }
 .navbar .container .nav li a {
     color: white;
 }
+.navbar .container .nav li a:hover {
+    background: #18F6EC;
+}
+.navbar .dropdown-menu {
+    background: #253F3F;
+}
+
 /*.navbar .container .nav li> .active> a {
     color: #18F6EC;
 }*/
+
 .col-sm-6 {
     padding-bottom: 20px;
 }
