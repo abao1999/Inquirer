@@ -14,7 +14,7 @@ body {
     color: white;
 }
 .navbar .container .nav li a:hover {
-    background: #18F6EC;
+    color: #18F6EC;
 }
 .navbar .dropdown-menu {
     background: #253F3F;
