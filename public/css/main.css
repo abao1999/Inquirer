@@ -8,9 +8,7 @@ body {
 .navbar .container a {
   color: white;
 }
-.navbar .container .nav li> .disabled> a {
-    color: white;
-}
+
 /*.navbar .container .nav li> .active> a {
     color: #18F6EC;
 }*/
