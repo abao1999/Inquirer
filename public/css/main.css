@@ -9,11 +9,12 @@ body {
     width: 100vw;
     height: 100vh;
     left:0;
-    top:-10px;
+    margin-top:-10px;
     background:midnightblue;
 }
 .navbar {
     background: #253F3F;
+    opacity:0.5;
 }
 .navbar .dropdown-menu {
     background: #253F3F;
