@@ -4,14 +4,12 @@ html {
 body {
     background: #f5f5f5;
 }
-.intro {
+.home {
     background: midnightblue;
     height:100%;
     width:100%;
     left:0;
     right:0;
-}
-
 }
 .navbar {
     background: #253F3F;
