@@ -5,11 +5,12 @@ body {
     background: #f5f5f5;
 }
 .homeintro {
-    background: midnightblue;
-    height:100%;
-    width:100%;
+    min-height: 800px;
+    width: 100vw;
+    height: 100vh;
     left:0;
     right:0;
+    background:midnightblue;
 }
 .navbar {
     background: #253F3F;
