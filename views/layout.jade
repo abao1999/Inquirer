@@ -8,7 +8,6 @@ html
         meta(name='csrf-token', content=_csrf)
         title #{title} - BASIS Inquirer
         link(rel='shortcut icon', href='/favicon.png')
-        block sliderstylesheets
         // default formatting from original source
         link(rel='stylesheet', href='/css/main2.css')
         // new custom formatting
@@ -16,7 +15,6 @@ html
 
     body
         include partials/header
-        // block slider
         .container
             include partials/flash
             block content
@@ -26,7 +24,6 @@ html
         script(src='/js/lib/jquery-2.2.0.min.js')
         script(src='/js/lib/bootstrap.min.js')
         script(src='/js/main.js')
-        block sliderscripts
 
         // Google Analytics: change UA-XXXXX-X to be your site's ID
         script.
