@@ -3,6 +3,12 @@ html {
 }
 body {
     background: #f5f5f5;
+    min-width: 0;
+    background: url('//d18l82el6cdm1i.cloudfront.net/site_media/version-0274df0539/images/home-hadron-collider.jpg') center no-repeat #333;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .intro {
     background: #253F3F;
@@ -11,11 +17,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('//d18l82el6cdm1i.cloudfront.net/site_media/version-0274df0539/images/home-hadron-collider.jpg') center no-repeat #333;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 }
