@@ -34,7 +34,7 @@ dotenv.load({
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const browseController = require('./controllers/browse');
-const featuredController = require('./controllers/featured');
+// const featuredController = require('./controllers/featured');
 const publicationsController = require('./controllers/publications');
 
 const contactController = require('./controllers/contact');
@@ -137,7 +137,7 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
 app.get('/browse', browseController.getBrowse);
-app.get('/featured', featuredController.getFeatured);
+// app.get('/featured', featuredController.getFeatured);
 app.get('/publications', publicationsController.getPublications);
 
 /**
