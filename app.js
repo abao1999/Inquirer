@@ -34,9 +34,6 @@ dotenv.load({
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
-const browseController = require('./controllers/browse');
-const featuredController = require('./controllers/featured');
-const publicationsController = require('./controllers/publications');
 const contactController = require('./controllers/contact');
 
 /**
@@ -137,22 +134,6 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
 /**
- * Browse route.
- */
-app.get('/browse', browseController.getBrowse);
-
-/**
- * Featured route.
- */
-app.get('/featured', featuredController.getBrowse);
-
-/**
- * Publications route.
- */
-app.get('/publications', publicationsController.getBrowse);
-
-
-/**
  * API examples routes.
  */
 app.get('/api', apiController.getApi);
@@ -184,7 +165,6 @@ app.get('/api/upload', apiController.getFileUpload);
 app.post('/api/upload', upload.single('myFile'), apiController.postFileUpload);
 app.get('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getPinterest);
 app.post('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.postPinterest);
-
 
 /**
  * OAuth authentication routes. (Sign in)
