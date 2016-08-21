@@ -470,6 +470,120 @@ passport.use(new InstagramStrategy({
     }
 }));
 
+/**
+ * Tumblr API OAuth.
+ */
+passport.use('tumblr', new OAuthStrategy({
+        requestTokenURL: 'http://www.tumblr.com/oauth/request_token',
+        accessTokenURL: 'http://www.tumblr.com/oauth/access_token',
+        userAuthorizationURL: 'http://www.tumblr.com/oauth/authorize',
+        consumerKey: process.env.TUMBLR_KEY,
+        consumerSecret: process.env.TUMBLR_SECRET,
+        callbackURL: '/auth/tumblr/callback',
+        passReqToCallback: true
+    },
+    (req, token, tokenSecret, profile, done) => {
+        User.findById(req.user._id, (err, user) => {
+            user.tokens.push({
+                kind: 'tumblr',
+                accessToken: token,
+                tokenSecret
+            });
+            user.save((err) => {
+                done(err, user);
+            });
+        });
+    }
+));
+
+/**
+ * Foursquare API OAuth.
+ */
+passport.use('foursquare', new OAuth2Strategy({
+        authorizationURL: 'https://foursquare.com/oauth2/authorize',
+        tokenURL: 'https://foursquare.com/oauth2/access_token',
+        clientID: process.env.FOURSQUARE_ID,
+        clientSecret: process.env.FOURSQUARE_SECRET,
+        callbackURL: process.env.FOURSQUARE_REDIRECT_URL,
+        passReqToCallback: true
+    },
+    (req, accessToken, refreshToken, profile, done) => {
+        User.findById(req.user._id, (err, user) => {
+            user.tokens.push({
+                kind: 'foursquare',
+                accessToken
+            });
+            user.save((err) => {
+                done(err, user);
+            });
+        });
+    }
+));
+
+/**
+ * Steam API OpenID.
+ */
+passport.use(new OpenIDStrategy({
+    apiKey: process.env.STEAM_KEY,
+    providerURL: 'http://steamcommunity.com/openid',
+    returnURL: 'http://localhost:3000/auth/steam/callback',
+    realm: 'http://localhost:3000/',
+    stateless: true
+}, (identifier, done) => {
+    const steamId = identifier.match(/\d+$/)[0];
+    const profileURL = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.STEAM_KEY}&steamids=${steamId}`;
+
+    User.findOne({
+        steam: steamId
+    }, (err, existingUser) => {
+        if (existingUser) return done(err, existingUser);
+        request(profileURL, (error, response, body) => {
+            if (!error && response.statusCode === 200) {
+                const data = JSON.parse(body);
+                const profile = data.response.players[0];
+
+                const user = new User();
+                user.steam = steamId;
+                user.email = `${steamId}@steam.com`; // steam does not disclose emails, prevent duplicate keys
+                user.tokens.push({
+                    kind: 'steam',
+                    accessToken: steamId
+                });
+                user.profile.name = profile.personaname;
+                user.profile.picture = profile.avatarmedium;
+                user.save((err) => {
+                    done(err, user);
+                });
+            } else {
+                done(error, null);
+            }
+        });
+    });
+}));
+
+/**
+ * Pinterest API OAuth.
+ */
+passport.use('pinterest', new OAuth2Strategy({
+        authorizationURL: 'https://api.pinterest.com/oauth/',
+        tokenURL: 'https://api.pinterest.com/v1/oauth/token',
+        clientID: process.env.PINTEREST_ID,
+        clientSecret: process.env.PINTEREST_SECRET,
+        callbackURL: process.env.PINTEREST_REDIRECT_URL,
+        passReqToCallback: true
+    },
+    (req, accessToken, refreshToken, profile, done) => {
+        User.findById(req.user._id, (err, user) => {
+            user.tokens.push({
+                kind: 'pinterest',
+                accessToken
+            });
+            user.save((err) => {
+                done(err, user);
+            });
+        });
+    }
+));
 
 /**
  * Login Required middleware.
