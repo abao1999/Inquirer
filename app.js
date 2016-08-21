@@ -146,12 +146,12 @@ app.get('/browse', browseController.getBrowse);
 /**
  * Featured route.
  */
-app.get('/featured', featuredController.getBrowse);
+app.get('/featured', featuredController.getFeatured);
 
 /**
  * Publications route.
  */
-app.get('/publications', publicationsController.getBrowse);
+app.get('/publications', publicationsController.getPublications);
 
 
 /**

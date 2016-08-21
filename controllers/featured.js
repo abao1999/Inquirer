@@ -2,7 +2,7 @@
  * GET featured
  * Browse page.
  */
-exports.getBrowse = (req, res) => {
+exports.getFeatured = (req, res) => {
     res.render('featured', {
         title: 'Featured'
     });
