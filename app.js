@@ -35,8 +35,8 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const browseController = require('./controllers/browse');
-const featuredController = require('./controllers/featured');
-const publicationsController = require('./controllers/publications');
+// const featuredController = require('./controllers/featured');
+// const publicationsController = require('./controllers/publications');
 const userController = require('./controllers/user');
 
 const contactController = require('./controllers/contact');
