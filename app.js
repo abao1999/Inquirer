@@ -34,6 +34,11 @@ dotenv.load({
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
+const browseController = require('./controllers/browse');
+const featuredController = require('./controllers/featured');
+const publicationsController = require('./controllers/publications');
+const userController = require('./controllers/user');
+
 const contactController = require('./controllers/contact');
 
 /**
@@ -132,6 +137,22 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
+
+/**
+ * Browse route.
+ */
+app.get('/browse', browseController.getBrowse);
+
+/**
+ * Featured route.
+ */
+app.get('/featured', featuredController.getBrowse);
+
+/**
+ * Publications route.
+ */
+app.get('/publications', publicationsController.getBrowse);
+
 
 /**
  * API examples routes.
