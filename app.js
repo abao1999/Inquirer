@@ -143,15 +143,15 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
  */
 app.get('/browse', browseController.getBrowse);
 
-/**
- * Featured route.
- */
-app.get('/featured', featuredController.getFeatured);
-
-/**
- * Publications route.
- */
-app.get('/publications', publicationsController.getPublications);
+// /**
+//  * Featured route.
+//  */
+// app.get('/featured', featuredController.getFeatured);
+//
+// /**
+//  * Publications route.
+//  */
+// app.get('/publications', publicationsController.getPublications);
 
 
 /**
