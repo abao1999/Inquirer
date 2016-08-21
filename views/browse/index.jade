@@ -3,22 +3,34 @@ extends ../layout
 block content
     h2 Topics
     hr
-    .row
+    .row.browseRow
         .col-sm-4
-            a(href='/api/github', style='color: #fff')
+            a(href='/browse/Tech', style='color: #fff')
                 .panel.panel-default(style='background-color: #000')
                     .panel-body
-                        img(src='http://i.imgur.com/2AaBlpf.png', height=40)
-                        |  GitHub
+                        |  Tech
         .col-sm-4
-            a(href='/api/twitter', style='color: #fff')
+            a(href='/browse/Health', style='color: #fff')
                 .panel.panel-default(style='background-color: #00abf0')
                     .panel-body
-                        img(src='http://i.imgur.com/EYA2FO1.png', height=40)
-                        |  Twitter
+                        |  Health
         .col-sm-4
-            a(href='/api/facebook', style='color: #fff')
+            a(href='/browse/Environment', style='color: #fff')
                 .panel.panel-default(style='background-color: #3b5998')
                     .panel-body
-                        img(src='http://i.imgur.com/jiztYCH.png', height=40)
-                        |  Facebook
+                        |  Environment
+        .col-sm-4
+            a(href='/browse/Physics', style='color: #fff')
+                .panel.panel-default(style='background-color: #3b5998')
+                    .panel-body
+                        |  Physics
+        .col-sm-4
+            a(href='/browse/Nature', style='color: #fff')
+                .panel.panel-default(style='background-color: #3b5998')
+                    .panel-body
+                        |  Nature
+        .col-sm-4
+            a(href='/browse/Futurism', style='color: #fff')
+                .panel.panel-default(style='background-color: #3b5998')
+                    .panel-body
+                        |  Futurism
