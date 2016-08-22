@@ -88,6 +88,7 @@ footer {
     text-align: center;
     line-height: 248px;
     vertical-align: middle;
+    background-size:cover;
 }
 .col-sm-12 {
     height: 300px;
