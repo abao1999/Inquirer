@@ -133,7 +133,7 @@ footer {
 #issue1 img {
     width: 100%;
 }
-#overlay1 {
+.overlay {
     display: none;
 }
 #issue1:hover #overlay1 {
@@ -149,6 +149,16 @@ footer {
     box-sizing: border-box;
     text-align: center;
     color: white;
+}
+.overlay a {
+    vertical-align:middle;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:black;
+    opacity:1;
+    color:white;
+    font-size:1em;
 }
 footer {
     background: #f5f5f5;
