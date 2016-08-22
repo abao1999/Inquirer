@@ -151,10 +151,11 @@ footer {
     color: white;
 }
 .overlay a {
-    padding: 20px;
     color: white;
-    background: black;
-    border-radius: 50%;
+}
+.overlay a i {
+    color: white;
+    margin-top: 60%;
 }
 footer {
     background: #f5f5f5;
