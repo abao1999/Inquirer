@@ -137,6 +137,7 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
 app.get('/browse', browseController.getBrowse);
+app.get('/tech', browseController.getTech);
 // app.get('/featured', featuredController.getFeatured);
 app.get('/publications', publicationsController.getPublications);
 

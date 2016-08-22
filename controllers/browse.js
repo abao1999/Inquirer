@@ -7,3 +7,9 @@ exports.getBrowse = (req, res) => {
         title: 'Browse'
     });
 };
+
+exports.getTech = (req, res) => {
+  res.render('browse/tech/index', {
+    title: 'Tech'
+  });
+};
