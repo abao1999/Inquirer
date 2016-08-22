@@ -127,11 +127,14 @@ footer {
 }
 #issue1 {
     width: 100%;
-    position:relative;
-    display:inline-block;
+    position: relative;
+    display: inline-block;
+}
+#issue1 img {
+    width: 100%;
 }
 #overlay1 {
-  display:none;
+    display: none;
 }
 #issue1:hover #overlay1 {
     width: 100%;
