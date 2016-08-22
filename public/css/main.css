@@ -127,23 +127,21 @@ footer {
 }
 #issue1 img {
     width: 100%;
+    transition: opacity 0.2s linear;
+}
+#issue1 img:hover {
+    opacity: 0;
 }
 .downloadIssueCover {
     position: absolute;
 }
 #downloadIssue1Cover {
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    position: absolute;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    visibility: hidden;
     opacity: 0.5;
+    width: 100%;
+    overflow: hidden;
 }
-#issue1:hover > #downloadIssue1Cover{
-    visibility:visible;
+#issue1:hover> #downloadIssue1Cover {
+    visibility: visible;
 }
 footer {
     background: #f5f5f5;
