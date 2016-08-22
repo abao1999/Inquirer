@@ -98,19 +98,25 @@ footer {
     padding: 20px;
     border-radius: 0px;
 }
-.col-sm-12 .entry img {
+.col-sm-12 .entry a img {
     height: auto;
     max-width: 100%;
     vertical-align: middle;
     border: 0;
-    width: 30%;
+    width: 40%;
+}
+.col-sm-12 .entry a h3 {
+    position: absolute;
+    top: 2%;
+    left: 35%;
+    font-size: 1.5em;
 }
 .col-sm-12 .entry article {
     position: absolute;
     top: 40%;
-    left: 35%;
+    left: 45%;
     font-size: 1em;
-    color:black;
+    color: black;
 }
 footer {
     background: #f5f5f5;
