@@ -151,14 +151,10 @@ footer {
     color: white;
 }
 .overlay a {
-    vertical-align:middle;
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    background:black;
-    opacity:1;
-    color:white;
-    font-size:1em;
+    padding: 20px;
+    color: white;
+    background: black;
+    border-radius: 50%;
 }
 footer {
     background: #f5f5f5;
