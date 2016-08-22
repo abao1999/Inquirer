@@ -7,6 +7,18 @@ block content
             .issue#issue1
                 #downloadIssue1Cover.downloadIssueCover
                     a(href="http://www.cnn.com")
-                img(src="/img/issue1.png")
+                .issue1-image
+                    img(src="/img/issue1.png")
             .issue#issue2
             .issue#issue3
+block extraScripts
+    $("#issue1").hover(
+    function() {
+        $("#issue1-image").fadeOut(300);
+        $("#downloadIssue1Cover").fadeIn(300);
+    },
+    function() {
+        $("#issue1-image").fadeIn(300);
+        $("#downloadIssue1Cover").fadeOut(300);        
+    }
+    );
