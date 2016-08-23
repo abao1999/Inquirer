@@ -88,7 +88,7 @@ footer {
     text-align: center;
     line-height: 248px;
     vertical-align: middle;
-    background-size:cover;
+    background-size: cover;
 }
 .col-sm-12 {
     height: 300px;
@@ -98,13 +98,19 @@ footer {
 .col-sm-12 .entry {
     padding: 20px;
     border-radius: 0px;
+    height: 100%;
 }
 .col-sm-12 .entry a img {
-    height: auto;
-    max-width: 100%;
-    vertical-align: middle;
-    border: 0;
+    height: 100%;
     width: 40%;
+}
+
+/*NEED MEDIA QUERY*/
+
+@media all and (max-width:760px) {
+    .col-sm-12 .entry a img {
+        height: auto;
+    }
 }
 .col-sm-12 .entry a h3 {
     position: absolute;
