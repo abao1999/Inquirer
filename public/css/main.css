@@ -10,7 +10,9 @@ body {
     height: 100vh;
     left: 0;
     margin-top: -10px;
-    background: #253F3F;
+    background: url('/img/universe1.jpg');
+    background-size: cover;
+    /*background: #253F3F;*/
 }
 .navbar {
     background: #253F3F;
