@@ -47,10 +47,6 @@ body {
 .row {
     padding-bottom: 45px;
 }
-footer {
-    background: #f5f5f5;
-    position: absolute;
-}
 .navbar .container a {
     color: white;
 }
@@ -168,5 +164,5 @@ footer {
 }
 footer {
     background: #f5f5f5;
-    position: absolute;
+    /*position: absolute;*/
 }
