@@ -35,7 +35,7 @@ exports.postLogin = function(req, res, next)  {
         return res.redirect('/login');
     }
 
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', function(err, user, info) {
         if (err) {
             return next(err);
         }
@@ -43,7 +43,7 @@ exports.postLogin = function(req, res, next)  {
             req.flash('errors', info);
             return res.redirect('/login');
         }
-        req.logIn(user, (err) => {
+        req.logIn(user, function(err) {
             if (err) {
                 return next(err);
             }
@@ -103,18 +103,18 @@ exports.postSignup = function(req, res, next)  {
 
     User.findOne({
         email: req.body.email
-    }, (err, existingUser) => {
+    }, function(err, existingUser) {
         if (existingUser) {
             req.flash('errors', {
                 msg: 'Account with that email address already exists.'
             });
             return res.redirect('/signup');
         }
-        user.save((err) => {
+        user.save(function(err) {
             if (err) {
                 return next(err);
             }
-            req.logIn(user, (err) => {
+            req.logIn(user, function(err) {
                 if (err) {
                     return next(err);
                 }
@@ -151,7 +151,7 @@ exports.postUpdateProfile = function(req, res, next)  {
         return res.redirect('/account');
     }
 
-    User.findById(req.user.id, (err, user) => {
+    User.findById(req.user.id, function(err, user) {
         if (err) {
             return next(err);
         }
@@ -160,7 +160,7 @@ exports.postUpdateProfile = function(req, res, next)  {
         user.profile.gender = req.body.gender || '';
         user.profile.location = req.body.location || '';
         user.profile.website = req.body.website || '';
-        user.save((err) => {
+        user.save(function(err) {
             if (err) {
                 if (err.code === 11000) {
                     req.flash('errors', {
@@ -193,12 +193,12 @@ exports.postUpdatePassword = function(req, res, next)  {
         return res.redirect('/account');
     }
 
-    User.findById(req.user.id, (err, user) => {
+    User.findById(req.user.id, function(err, user) {
         if (err) {
             return next(err);
         }
         user.password = req.body.password;
-        user.save((err) => {
+        user.save(function(err) {
             if (err) {
                 return next(err);
             }
@@ -217,7 +217,7 @@ exports.postUpdatePassword = function(req, res, next)  {
 exports.postDeleteAccount = function(req, res, next)  {
     User.remove({
         _id: req.user.id
-    }, (err) => {
+    }, function(err) {
         if (err) {
             return next(err);
         }
@@ -235,13 +235,13 @@ exports.postDeleteAccount = function(req, res, next)  {
  */
 exports.getOauthUnlink = function(req, res, next)  {
     const provider = req.params.provider;
-    User.findById(req.user.id, (err, user) => {
+    User.findById(req.user.id, function(err, user) {
         if (err) {
             return next(err);
         }
         user[provider] = undefined;
         user.tokens = user.tokens.filter(token => token.kind !== provider);
-        user.save((err) => {
+        user.save(function(err) {
             if (err) {
                 return next(err);
             }
@@ -266,7 +266,7 @@ exports.getReset = function(req, res, next)  {
             passwordResetToken: req.params.token
         })
         .where('passwordResetExpires').gt(Date.now())
-        .exec((err, user) => {
+        .exec(function(err, user) {
             if (err) {
                 return next(err);
             }
@@ -304,7 +304,7 @@ exports.postReset = function(req, res, next)  {
                     passwordResetToken: req.params.token
                 })
                 .where('passwordResetExpires').gt(Date.now())
-                .exec((err, user) => {
+                .exec(function(err, user) {
                     if (err) {
                         return next(err);
                     }
@@ -317,11 +317,11 @@ exports.postReset = function(req, res, next)  {
                     user.password = req.body.password;
                     user.passwordResetToken = undefined;
                     user.passwordResetExpires = undefined;
-                    user.save((err) => {
+                    user.save(function(err) {
                         if (err) {
                             return next(err);
                         }
-                        req.logIn(user, (err) => {
+                        req.logIn(user, function(err) {
                             done(err, user);
                         });
                     });
@@ -341,14 +341,14 @@ exports.postReset = function(req, res, next)  {
                 subject: 'Your BASIS Inquirer password has been changed',
                 text: `Hello,\n\nThis is a confirmation that the password for your account ${user.email} has just been changed.\n`
             };
-            transporter.sendMail(mailOptions, (err) => {
+            transporter.sendMail(mailOptions, function(err) {
                 req.flash('success', {
                     msg: 'Success! Your password has been changed.'
                 });
                 done(err);
             });
         }
-    ], (err) => {
+    ], function(err) {
         if (err) {
             return next(err);
         }
@@ -388,7 +388,7 @@ exports.postForgot = function(req, res, next)  {
 
     async.waterfall([
         function(done) {
-            crypto.randomBytes(16, (err, buf) => {
+            crypto.randomBytes(16, function(err, buf) {
                 const token = buf.toString('hex');
                 done(err, token);
             });
@@ -396,7 +396,7 @@ exports.postForgot = function(req, res, next)  {
         function(token, done) {
             User.findOne({
                 email: req.body.email
-            }, (err, user) => {
+            }, function(err, user) {
                 if (!user) {
                     req.flash('errors', {
                         msg: 'Account with that email address does not exist.'
@@ -405,7 +405,7 @@ exports.postForgot = function(req, res, next)  {
                 }
                 user.passwordResetToken = token;
                 user.passwordResetExpires = Date.now() + 3600000; // 1 hour
-                user.save((err) => {
+                user.save(function(err) {
                     done(err, token, user);
                 });
             });
@@ -427,14 +427,14 @@ exports.postForgot = function(req, res, next)  {
           http://${req.headers.host}/reset/${token}\n\n
           If you did not request this, please ignore this email and your password will remain unchanged.\n`
             };
-            transporter.sendMail(mailOptions, (err) => {
+            transporter.sendMail(mailOptions, function(err) {
                 req.flash('info', {
                     msg: `An e-mail has been sent to ${user.email} with further instructions.`
                 });
                 done(err);
             });
         }
-    ], (err) => {
+    ], function(err) {
         if (err) {
             return next(err);
         }

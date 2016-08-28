@@ -287,7 +287,7 @@ passport.use(new GoogleStrategy({
                     user.profile.name = user.profile.name || profile.displayName;
                     user.profile.gender = user.profile.gender || profile._json.gender;
                     user.profile.picture = user.profile.picture || profile._json.image.url;
-                    user.save((err) => {
+                    user.save(function(err) {
                         req.flash('info', {
                             msg: 'Google account has been linked.'
                         });
