@@ -8,7 +8,7 @@ const User = require('../models/User');
  * GET /login
  * Login page.
  */
-exports.getLogin = (req, res) => {
+exports.getLogin = function(req, res)  {
     if (req.user) {
         return res.redirect('/');
     }
@@ -59,7 +59,7 @@ exports.postLogin = (req, res, next) => {
  * GET /logout
  * Log out.
  */
-exports.logout = (req, res) => {
+exports.logout = function(req, res)  {
     req.logout();
     res.redirect('/');
 };
@@ -68,7 +68,7 @@ exports.logout = (req, res) => {
  * GET /signup
  * Signup page.
  */
-exports.getSignup = (req, res) => {
+exports.getSignup = function(req, res)  {
     if (req.user) {
         return res.redirect('/');
     }
@@ -128,7 +128,7 @@ exports.postSignup = (req, res, next) => {
  * GET /account
  * Profile page.
  */
-exports.getAccount = (req, res) => {
+exports.getAccount = function(req, res)  {
     res.render('account/profile', {
         title: 'Account Management'
     });
@@ -360,7 +360,7 @@ exports.postReset = (req, res, next) => {
  * GET /forgot
  * Forgot Password page.
  */
-exports.getForgot = (req, res) => {
+exports.getForgot = function(req, res)  {
     if (req.isAuthenticated()) {
         return res.redirect('/');
     }
