@@ -4,11 +4,12 @@ block extraStyleSheet
         footer {
             position: absolute;
         }
-        form {
-            padding-top: 40px;
-        }
+        //- form {
+        //-     padding-top: 20px;
+        //- }
 block content
     h1 Contact Form
+    hr
     form.form-horizontal(method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
