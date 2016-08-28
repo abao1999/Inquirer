@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    h1 Contact Form
-    hr
+    .page-header
+        h2 Contact Form
     form.form-horizontal(method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
