@@ -2,13 +2,13 @@
  * GET /browse
  * Browse page.
  */
-exports.getBrowse = (req, res) => {
+exports.getBrowse = function(req, res)  {
     res.render('browse/index', {
         title: 'Browse'
     });
 };
 
-exports.getTech = (req, res) => {
+exports.getTech = function(req, res)  {
   res.render('browse/tech/index', {
     title: 'Tech'
   });

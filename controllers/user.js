@@ -8,7 +8,7 @@ const User = require('../models/User');
  * GET /login
  * Login page.
  */
-exports.getLogin = (req, res) => {
+exports.getLogin = function(req, res)  {
     if (req.user) {
         return res.redirect('/');
     }
@@ -21,7 +21,7 @@ exports.getLogin = (req, res) => {
  * POST /login
  * Sign in using email and password.
  */
-exports.postLogin = (req, res, next) => {
+exports.postLogin = function(req, res, next)  {
     req.assert('email', 'Email is not valid').isEmail();
     req.assert('password', 'Password cannot be blank').notEmpty();
     req.sanitize('email').normalizeEmail({
@@ -35,7 +35,7 @@ exports.postLogin = (req, res, next) => {
         return res.redirect('/login');
     }
 
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', function(err, user, info) {
         if (err) {
             return next(err);
         }
@@ -43,7 +43,7 @@ exports.postLogin = (req, res, next) => {
             req.flash('errors', info);
             return res.redirect('/login');
         }
-        req.logIn(user, (err) => {
+        req.logIn(user, function(err) {
             if (err) {
                 return next(err);
             }
@@ -59,7 +59,7 @@ exports.postLogin = (req, res, next) => {
  * GET /logout
  * Log out.
  */
-exports.logout = (req, res) => {
+exports.logout = function(req, res)  {
     req.logout();
     res.redirect('/');
 };
@@ -68,7 +68,7 @@ exports.logout = (req, res) => {
  * GET /signup
  * Signup page.
  */
-exports.getSignup = (req, res) => {
+exports.getSignup = function(req, res)  {
     if (req.user) {
         return res.redirect('/');
     }
@@ -81,7 +81,7 @@ exports.getSignup = (req, res) => {
  * POST /signup
  * Create a new local account.
  */
-exports.postSignup = (req, res, next) => {
+exports.postSignup = function(req, res, next)  {
     req.assert('email', 'Email is not valid').isEmail();
     req.assert('password', 'Password must be at least 4 characters long').len(4);
     req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
@@ -103,18 +103,18 @@ exports.postSignup = (req, res, next) => {
 
     User.findOne({
         email: req.body.email
-    }, (err, existingUser) => {
+    }, function(err, existingUser) {
         if (existingUser) {
             req.flash('errors', {
                 msg: 'Account with that email address already exists.'
             });
             return res.redirect('/signup');
         }
-        user.save((err) => {
+        user.save(function(err) {
             if (err) {
                 return next(err);
             }
-            req.logIn(user, (err) => {
+            req.logIn(user, function(err) {
                 if (err) {
                     return next(err);
                 }
@@ -128,7 +128,7 @@ exports.postSignup = (req, res, next) => {
  * GET /account
  * Profile page.
  */
-exports.getAccount = (req, res) => {
+exports.getAccount = function(req, res)  {
     res.render('account/profile', {
         title: 'Account Management'
     });
@@ -138,7 +138,7 @@ exports.getAccount = (req, res) => {
  * POST /account/profile
  * Update profile information.
  */
-exports.postUpdateProfile = (req, res, next) => {
+exports.postUpdateProfile = function(req, res, next)  {
     req.assert('email', 'Please enter a valid email address.').isEmail();
     req.sanitize('email').normalizeEmail({
         remove_dots: false
@@ -151,7 +151,7 @@ exports.postUpdateProfile = (req, res, next) => {
         return res.redirect('/account');
     }
 
-    User.findById(req.user.id, (err, user) => {
+    User.findById(req.user.id, function(err, user) {
         if (err) {
             return next(err);
         }
@@ -160,7 +160,7 @@ exports.postUpdateProfile = (req, res, next) => {
         user.profile.gender = req.body.gender || '';
         user.profile.location = req.body.location || '';
         user.profile.website = req.body.website || '';
-        user.save((err) => {
+        user.save(function(err) {
             if (err) {
                 if (err.code === 11000) {
                     req.flash('errors', {
@@ -182,7 +182,7 @@ exports.postUpdateProfile = (req, res, next) => {
  * POST /account/password
  * Update current password.
  */
-exports.postUpdatePassword = (req, res, next) => {
+exports.postUpdatePassword = function(req, res, next)  {
     req.assert('password', 'Password must be at least 4 characters long').len(4);
     req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
 
@@ -193,12 +193,12 @@ exports.postUpdatePassword = (req, res, next) => {
         return res.redirect('/account');
     }
 
-    User.findById(req.user.id, (err, user) => {
+    User.findById(req.user.id, function(err, user) {
         if (err) {
             return next(err);
         }
         user.password = req.body.password;
-        user.save((err) => {
+        user.save(function(err) {
             if (err) {
                 return next(err);
             }
@@ -214,10 +214,10 @@ exports.postUpdatePassword = (req, res, next) => {
  * POST /account/delete
  * Delete user account.
  */
-exports.postDeleteAccount = (req, res, next) => {
+exports.postDeleteAccount = function(req, res, next)  {
     User.remove({
         _id: req.user.id
-    }, (err) => {
+    }, function(err) {
         if (err) {
             return next(err);
         }
@@ -233,15 +233,15 @@ exports.postDeleteAccount = (req, res, next) => {
  * GET /account/unlink/:provider
  * Unlink OAuth provider.
  */
-exports.getOauthUnlink = (req, res, next) => {
+exports.getOauthUnlink = function(req, res, next)  {
     const provider = req.params.provider;
-    User.findById(req.user.id, (err, user) => {
+    User.findById(req.user.id, function(err, user) {
         if (err) {
             return next(err);
         }
         user[provider] = undefined;
         user.tokens = user.tokens.filter(token => token.kind !== provider);
-        user.save((err) => {
+        user.save(function(err) {
             if (err) {
                 return next(err);
             }
@@ -257,7 +257,7 @@ exports.getOauthUnlink = (req, res, next) => {
  * GET /reset/:token
  * Reset Password page.
  */
-exports.getReset = (req, res, next) => {
+exports.getReset = function(req, res, next)  {
     if (req.isAuthenticated()) {
         return res.redirect('/');
     }
@@ -266,7 +266,7 @@ exports.getReset = (req, res, next) => {
             passwordResetToken: req.params.token
         })
         .where('passwordResetExpires').gt(Date.now())
-        .exec((err, user) => {
+        .exec(function(err, user) {
             if (err) {
                 return next(err);
             }
@@ -286,7 +286,7 @@ exports.getReset = (req, res, next) => {
  * POST /reset/:token
  * Process the reset password request.
  */
-exports.postReset = (req, res, next) => {
+exports.postReset = function(req, res, next)  {
     req.assert('password', 'Password must be at least 4 characters long.').len(4);
     req.assert('confirm', 'Passwords must match.').equals(req.body.password);
 
@@ -304,7 +304,7 @@ exports.postReset = (req, res, next) => {
                     passwordResetToken: req.params.token
                 })
                 .where('passwordResetExpires').gt(Date.now())
-                .exec((err, user) => {
+                .exec(function(err, user) {
                     if (err) {
                         return next(err);
                     }
@@ -317,11 +317,11 @@ exports.postReset = (req, res, next) => {
                     user.password = req.body.password;
                     user.passwordResetToken = undefined;
                     user.passwordResetExpires = undefined;
-                    user.save((err) => {
+                    user.save(function(err) {
                         if (err) {
                             return next(err);
                         }
-                        req.logIn(user, (err) => {
+                        req.logIn(user, function(err) {
                             done(err, user);
                         });
                     });
@@ -341,14 +341,14 @@ exports.postReset = (req, res, next) => {
                 subject: 'Your BASIS Inquirer password has been changed',
                 text: `Hello,\n\nThis is a confirmation that the password for your account ${user.email} has just been changed.\n`
             };
-            transporter.sendMail(mailOptions, (err) => {
+            transporter.sendMail(mailOptions, function(err) {
                 req.flash('success', {
                     msg: 'Success! Your password has been changed.'
                 });
                 done(err);
             });
         }
-    ], (err) => {
+    ], function(err) {
         if (err) {
             return next(err);
         }
@@ -360,7 +360,7 @@ exports.postReset = (req, res, next) => {
  * GET /forgot
  * Forgot Password page.
  */
-exports.getForgot = (req, res) => {
+exports.getForgot = function(req, res)  {
     if (req.isAuthenticated()) {
         return res.redirect('/');
     }
@@ -373,7 +373,7 @@ exports.getForgot = (req, res) => {
  * POST /forgot
  * Create a random token, then the send user an email with a reset link.
  */
-exports.postForgot = (req, res, next) => {
+exports.postForgot = function(req, res, next)  {
     req.assert('email', 'Please enter a valid email address.').isEmail();
     req.sanitize('email').normalizeEmail({
         remove_dots: false
@@ -388,7 +388,7 @@ exports.postForgot = (req, res, next) => {
 
     async.waterfall([
         function(done) {
-            crypto.randomBytes(16, (err, buf) => {
+            crypto.randomBytes(16, function(err, buf) {
                 const token = buf.toString('hex');
                 done(err, token);
             });
@@ -396,7 +396,7 @@ exports.postForgot = (req, res, next) => {
         function(token, done) {
             User.findOne({
                 email: req.body.email
-            }, (err, user) => {
+            }, function(err, user) {
                 if (!user) {
                     req.flash('errors', {
                         msg: 'Account with that email address does not exist.'
@@ -405,7 +405,7 @@ exports.postForgot = (req, res, next) => {
                 }
                 user.passwordResetToken = token;
                 user.passwordResetExpires = Date.now() + 3600000; // 1 hour
-                user.save((err) => {
+                user.save(function(err) {
                     done(err, token, user);
                 });
             });
@@ -427,14 +427,14 @@ exports.postForgot = (req, res, next) => {
           http://${req.headers.host}/reset/${token}\n\n
           If you did not request this, please ignore this email and your password will remain unchanged.\n`
             };
-            transporter.sendMail(mailOptions, (err) => {
+            transporter.sendMail(mailOptions, function(err) {
                 req.flash('info', {
                     msg: `An e-mail has been sent to ${user.email} with further instructions.`
                 });
                 done(err);
             });
         }
-    ], (err) => {
+    ], function(err) {
         if (err) {
             return next(err);
         }

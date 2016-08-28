@@ -54,7 +54,7 @@ const app = express();
  * Connect to MongoDB.
  */
 mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
-mongoose.connection.on('error', () => {
+mongoose.connection.on('error', function() {
     console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
     process.exit(1);
 });
@@ -88,7 +88,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use((req, res, next) => {
+app.use(function(req, res, next) {
     if (req.path === '/api/upload') {
         next();
     } else {
@@ -97,7 +97,7 @@ app.use((req, res, next) => {
 });
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
-app.use((req, res, next) => {
+app.use(function(req, res, next) {
     res.locals.user = req.user;
     next();
 });
@@ -149,7 +149,7 @@ app.get('/publications', publicationsController.getPublications);
 app.get('/auth/instagram', passport.authenticate('instagram'));
 app.get('/auth/instagram/callback', passport.authenticate('instagram', {
     failureRedirect: '/login'
-}), (req, res) => {
+}), function(req, res)  {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/facebook', passport.authenticate('facebook', {
@@ -157,13 +157,13 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
 }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', {
     failureRedirect: '/login'
-}), (req, res) => {
+}), function(req, res)  {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/github', passport.authenticate('github'));
 app.get('/auth/github/callback', passport.authenticate('github', {
     failureRedirect: '/login'
-}), (req, res) => {
+}), function(req, res)  {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/google', passport.authenticate('google', {
@@ -171,13 +171,13 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 app.get('/auth/google/callback', passport.authenticate('google', {
     failureRedirect: '/login'
-}), (req, res) => {
+}), function(req, res)  {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', {
     failureRedirect: '/login'
-}), (req, res) => {
+}), function(req, res)  {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/linkedin', passport.authenticate('linkedin', {
@@ -185,7 +185,7 @@ app.get('/auth/linkedin', passport.authenticate('linkedin', {
 }));
 app.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
     failureRedirect: '/login'
-}), (req, res) => {
+}), function(req, res)  {
     res.redirect(req.session.returnTo || '/');
 });
 
@@ -198,7 +198,7 @@ app.use(errorHandler());
 /**
  * Start Express server.
  */
-app.listen(app.get('port'), () => {
+app.listen(app.get('port'), function() {
     console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
 
