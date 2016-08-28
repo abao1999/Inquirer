@@ -1,14 +1,14 @@
 extends layout
 block extraStyleSheet
     style.
-        @media all and (max-width: 768px) {
+        @media all and (min-width: 768px) {
             footer {
-                position: static;
+                position: absolute;
             }
         }
 block content
     .page-header
-        h3 Contact Form
+        h1 Contact Form
     form.form-horizontal(method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group

@@ -4,7 +4,7 @@ html {
 body {
     background: #f5f5f5;
     margin: 0;
-    padding: 0;
+    /*padding: 0;*/
 }
 .homeintro {
     width: 100vw;
@@ -14,8 +14,8 @@ body {
     /*background: #253F3F;*/
 }
 .navbar {
-    background: rgba(0, 0, 0, 0.3);
-    /*background: #253F3F;*/
+    /*background: rgba(0, 0, 0, 0.3);*/
+    background: #253F3F;
 }
 .navbar .dropdown-menu {
     background: #253F3F;
