@@ -21,7 +21,7 @@ exports.getLogin = function(req, res)  {
  * POST /login
  * Sign in using email and password.
  */
-exports.postLogin = (req, res, next) => {
+exports.postLogin = function(req, res, next)  {
     req.assert('email', 'Email is not valid').isEmail();
     req.assert('password', 'Password cannot be blank').notEmpty();
     req.sanitize('email').normalizeEmail({
@@ -81,7 +81,7 @@ exports.getSignup = function(req, res)  {
  * POST /signup
  * Create a new local account.
  */
-exports.postSignup = (req, res, next) => {
+exports.postSignup = function(req, res, next)  {
     req.assert('email', 'Email is not valid').isEmail();
     req.assert('password', 'Password must be at least 4 characters long').len(4);
     req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
@@ -138,7 +138,7 @@ exports.getAccount = function(req, res)  {
  * POST /account/profile
  * Update profile information.
  */
-exports.postUpdateProfile = (req, res, next) => {
+exports.postUpdateProfile = function(req, res, next)  {
     req.assert('email', 'Please enter a valid email address.').isEmail();
     req.sanitize('email').normalizeEmail({
         remove_dots: false
@@ -182,7 +182,7 @@ exports.postUpdateProfile = (req, res, next) => {
  * POST /account/password
  * Update current password.
  */
-exports.postUpdatePassword = (req, res, next) => {
+exports.postUpdatePassword = function(req, res, next)  {
     req.assert('password', 'Password must be at least 4 characters long').len(4);
     req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
 
@@ -214,7 +214,7 @@ exports.postUpdatePassword = (req, res, next) => {
  * POST /account/delete
  * Delete user account.
  */
-exports.postDeleteAccount = (req, res, next) => {
+exports.postDeleteAccount = function(req, res, next)  {
     User.remove({
         _id: req.user.id
     }, (err) => {
@@ -233,7 +233,7 @@ exports.postDeleteAccount = (req, res, next) => {
  * GET /account/unlink/:provider
  * Unlink OAuth provider.
  */
-exports.getOauthUnlink = (req, res, next) => {
+exports.getOauthUnlink = function(req, res, next)  {
     const provider = req.params.provider;
     User.findById(req.user.id, (err, user) => {
         if (err) {
@@ -257,7 +257,7 @@ exports.getOauthUnlink = (req, res, next) => {
  * GET /reset/:token
  * Reset Password page.
  */
-exports.getReset = (req, res, next) => {
+exports.getReset = function(req, res, next)  {
     if (req.isAuthenticated()) {
         return res.redirect('/');
     }
@@ -286,7 +286,7 @@ exports.getReset = (req, res, next) => {
  * POST /reset/:token
  * Process the reset password request.
  */
-exports.postReset = (req, res, next) => {
+exports.postReset = function(req, res, next)  {
     req.assert('password', 'Password must be at least 4 characters long.').len(4);
     req.assert('confirm', 'Passwords must match.').equals(req.body.password);
 
@@ -373,7 +373,7 @@ exports.getForgot = function(req, res)  {
  * POST /forgot
  * Create a random token, then the send user an email with a reset link.
  */
-exports.postForgot = (req, res, next) => {
+exports.postForgot = function(req, res, next)  {
     req.assert('email', 'Please enter a valid email address.').isEmail();
     req.sanitize('email').normalizeEmail({
         remove_dots: false
