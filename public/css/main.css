@@ -192,7 +192,12 @@ body {
     margin: 40px 0 20px;
     border-bottom: 1px solid #eeeeee;
 }
-
+.description-text-block {
+    color:black;
+}
+.team-list {
+    color:black;
+}
 footer {
     background: #f5f5f5;
     position: absolute;
