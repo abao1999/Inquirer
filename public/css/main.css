@@ -13,12 +13,18 @@ body {
     background-size: cover;
     /*background: #253F3F;*/
 }
+.container {
+    padding-bottom: 45px;
+}
 .navbar {
     /*background: rgba(0, 0, 0, 0.3);*/
     background: #253F3F;
 }
 .navbar .dropdown-menu {
     background: #253F3F;
+}
+.navbar .container {
+    padding-bottom:inherit!important;
 }
 .navbar .container a {
     color: white;
@@ -36,10 +42,6 @@ body {
 /*.navbar .container .nav li> .active> a {
     color: #18F6EC;
 }*/
-
-.container {
-    padding-bottom: 45px;
-}
 
 .col-sm-6 {
     padding-bottom: 20px;
