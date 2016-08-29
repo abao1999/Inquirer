@@ -33,7 +33,7 @@ body {
     background: #253F3F;
 }
 .navbar .container {
-    padding-bottom:inherit!important;
+    padding-bottom: inherit!important;
 }
 .navbar .container a {
     color: white;
@@ -46,6 +46,14 @@ body {
 }
 .navbar .dropdown-menu {
     background: #253F3F;
+}
+.navbar-brand {
+    margin-left: 30px;
+}
+.navbar-brand img {
+    width: 20px;
+    margin-left: -30px;
+    margin-top: -22px;
 }
 
 /*COLUMNS AND TABLES AND ROWS*/
@@ -88,7 +96,6 @@ body {
     height: 100%;
     width: 40%;
 }
-
 @media all and (max-width:760px) {
     .col-sm-12 .entry a img {
         height: auto;
@@ -252,6 +259,7 @@ body {
     display: none;
 }*/
 
+
 /*.overlay a {
     color: white;
 }
@@ -259,6 +267,7 @@ body {
     color: white;
     margin-top: 55%;
 }*/
+
 
 /*HOME PAGE AND PAGE and FORM HEADERS*/
 
@@ -271,10 +280,10 @@ body {
     position: absolute;
 }
 .title {
-  font-size: 6em;
-  color:white;
-  text-align:center;
-  font-style:italic;
+    font-size: 6em;
+    color: white;
+    text-align: center;
+    font-style: italic;
 }
 .page-header {
     padding-bottom: 9px;
@@ -290,10 +299,10 @@ body {
 /*ABOUT US*/
 
 .description-text-block {
-    color:black;
+    color: black;
 }
 .team-list {
-    color:black;
+    color: black;
 }
 
 /*FOOTER*/
