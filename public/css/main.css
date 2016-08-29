@@ -6,6 +6,9 @@ body {
     margin: 0;
     /*padding: 0;*/
 }
+
+/*INTRO COVER IMAGE ON HOME PAGE*/
+
 .homeintro {
     width: 100vw;
     height: 100vh;
@@ -13,9 +16,15 @@ body {
     background-size: cover;
     /*background: #253F3F;*/
 }
+
+/*CONTAINER BLOCK*/
+
 .container {
     padding-bottom: 45px;
 }
+
+/*NAVBAR */
+
 .navbar {
     /*background: rgba(0, 0, 0, 0.3);*/
     background: #253F3F;
@@ -39,36 +48,7 @@ body {
     background: #253F3F;
 }
 
-/*.navbar .container .nav li> .active> a {
-    color: #18F6EC;
-}*/
-
-.col-sm-6 {
-    padding-bottom: 20px;
-}
-.col-sm-6 img {
-    width: 100%;
-    height: 100%;
-}
-.row {
-    padding-bottom: 45px;
-}
-.navbar .container a {
-    color: white;
-}
-.navbar .container .nav li a {
-    color: white;
-}
-.navbar .container .nav li a:hover {
-    color: #18F6EC;
-}
-.navbar .dropdown-menu {
-    background: #253F3F;
-}
-
-/*.navbar .container .nav li> .active> a {
-    color: #18F6EC;
-}*/
+/*COLUMNS AND TABLES AND ROWS*/
 
 .col-sm-6 {
     padding-bottom: 20px;
@@ -109,8 +89,6 @@ body {
     width: 40%;
 }
 
-/*NEED MEDIA QUERY*/
-
 @media all and (max-width:760px) {
     .col-sm-12 .entry a img {
         height: auto;
@@ -133,15 +111,18 @@ body {
     font-size: 1em;
     color: black;
 }
+
+/*PUBLICATIONS*/
+
 .publicationsRow .col-sm-4 {
     padding-bottom: 20px;
 }
-#issue1 {
+.issue {
     width: 100%;
     position: relative;
     display: inline-block;
 }
-#issue1 img {
+.issue img {
     width: 100%;
 }
 .overlay {
@@ -168,6 +149,77 @@ body {
     color: white;
     margin-top: 55%;
 }
+
+/*FLYERS in ABOUT US*/
+
+.flyersRow .col-sm-4 {
+    padding-bottom: 20px;
+}
+.flyer {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+.flyer img {
+    width: 100%;
+}
+#flyer1:hover #flyer-overlay1 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+#flyer2:hover #flyer-overlay2 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+#flyer3:hover #flyer-overlay3 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+
+/*.overlay {
+    display: none;
+}*/
+
+/*.overlay a {
+    color: white;
+}
+.overlay a i {
+    color: white;
+    margin-top: 55%;
+}*/
+
+/*HOME PAGE AND PAGE and FORM HEADERS*/
+
 .intro-container {
     margin: auto;
     margin-top: 200px;
@@ -182,6 +234,28 @@ body {
   text-align:center;
   font-style:italic;
 }
+.page-header {
+    padding-bottom: 9px;
+    margin: 20px 0 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+.form-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/*ABOUT US*/
+
+.description-text-block {
+    color:black;
+}
+.team-list {
+    color:black;
+}
+
+/*FOOTER*/
+
 footer {
     background: #f5f5f5;
     position: absolute;
