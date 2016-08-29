@@ -128,6 +128,13 @@ body {
 .overlay {
     display: none;
 }
+.overlay a {
+    color: white;
+}
+.overlay a i {
+    color: white;
+    margin-top: 55%;
+}
 #issue1:hover #overlay1 {
     width: 100%;
     height: 100%;
@@ -142,12 +149,47 @@ body {
     text-align: center;
     color: white;
 }
-.overlay a {
+#issue2:hover #overlay2 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
     color: white;
 }
-.overlay a i {
+#issue3:hover #overlay3 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
     color: white;
-    margin-top: 55%;
+}
+#issue0:hover #overlay0 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
 }
 
 /*FLYERS in ABOUT US*/
