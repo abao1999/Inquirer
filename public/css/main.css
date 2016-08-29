@@ -48,7 +48,7 @@ body {
     background: #253F3F;
 }
 .navbar-brand {
-    margin-left: 30px;
+    margin-left: 30px!important;
 }
 .navbar-brand img {
     width: 20px;
