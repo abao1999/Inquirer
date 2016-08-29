@@ -3904,7 +3904,7 @@ tbody.collapse.in {
 }
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu> li> a {
-        color: #252525;
+        color: white;
     }
     .navbar-default .navbar-nav .open .dropdown-menu> li> a:hover, .navbar-default .navbar-nav .open .dropdown-menu> li> a:focus {
         color: #18F6EC;
