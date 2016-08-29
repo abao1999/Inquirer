@@ -140,6 +140,12 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/about', aboutController.getAbout);
 app.get('/browse', browseController.getBrowse);
 app.get('/browse/tech', browseController.getTech);
+app.get('/browse/health', browseController.getHealth);
+app.get('/browse/environment', browseController.getEnvironment);
+app.get('/browse/physics', browseController.getPhysics);
+app.get('/browse/nature', browseController.getNature);
+app.get('/browse/futurism', browseController.getFuturism);
+
 // app.get('/featured', featuredController.getFeatured);
 app.get('/publications', publicationsController.getPublications);
 
