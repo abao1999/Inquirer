@@ -62,6 +62,7 @@ body {
 @media (max-width: 768px) {
     .navbar-default {
         background: #253f3f!important;
+    }
 }
 
 /*COLUMNS AND TABLES AND ROWS*/
