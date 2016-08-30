@@ -27,9 +27,9 @@ body {
 /*NAVBAR */
 
 .navbar {
-    background: rgba(0, 0, 0, 0);
+    /*background: rgba(0, 0, 0, 0);*/
     /*background: rgba(0, 0, 0, 0.3);*/
-    /*background: #253F3F;*/
+    background: #253F3F;
 }
 .navbar .dropdown-menu {
     background: #253F3F;
@@ -57,6 +57,11 @@ body {
     width: 20px;
     margin-left: -30px;
     margin-top: -22px;
+}
+
+@media (max-width: 768px) {
+    .navbar-default {
+        background: #253f3f!important;
 }
 
 /*COLUMNS AND TABLES AND ROWS*/
