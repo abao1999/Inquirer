@@ -12,7 +12,7 @@ body {
 .homeintro {
     width: 100vw;
     height: 100vh;
-    background: url('/img/universe1.jpg');
+    background: url('/img/universe2.jpg');
     background-size: cover;
     /*background: #253F3F;*/
 }
