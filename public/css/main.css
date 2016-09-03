@@ -12,10 +12,53 @@ body {
 .homeintro {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url('/img/universe2.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/img/universe2.jpg');
     background-size: cover;
     /*background: url('/img/universe2.jpg');*/
     /*background: #253F3F;*/
+}
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 5s 0.5s linear alternate both;
+    font-family: Helvetica Neue;
+}
+
+/*Chrome, Safari, Opera*/
+
+@-webkit-keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+        fill-opacity: 0;
+    }
+    to {
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
+    }
+}
+
+/*Standard*/
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+        fill-opacity: 0;
+    }
+    to {
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
+    }
+}
+.intro-container .title span {
+    display: none;
+}
+@media (max-width: 580px) {
+    .intro-container .title span {
+        display: inherit;
+    }
+    .intro-container .title svg {
+        display: none;
+    }
 }
 
 /*CONTAINER BLOCK*/
@@ -58,7 +101,6 @@ body {
     margin-left: -30px;
     margin-top: -22px;
 }
-
 @media (max-width: 768px) {
     .navbar-default {
         background: #253f3f!important;

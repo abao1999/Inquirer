@@ -11,33 +11,6 @@ block extraStyleSheet
         footer, .main-container {
             display: none;
         }
-        .path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            -webkit-animation: dash 5s 0.5s linear alternate both;
-                font-family: Helvetica Neue;
-        }
-        @-webkit-keyframes dash {
-            from {
-                stroke-dashoffset: 1000;
-                fill-opacity: 0;
-            }
-            to {
-                stroke-dashoffset: 0;
-                fill-opacity: 1;
-            }
-        }
-        .intro-container .title span {
-            display:none;
-        }
-        @media (max-width: 580px) {
-            .intro-container .title span {
-                display:inherit;
-            }
-            .intro-container .title svg {
-                display:none;
-            }
-        }            
 
 block home
     section.homeintro
@@ -50,6 +23,7 @@ block home
                     stroke-dasharray: 1000;\
                     stroke-dashoffset: 1000;\
                     -webkit-animation: dash 5s 0.5s linear alternate both;\
+                    animation: dash 5s 0.5s linear alternate both;\
                     ') BASIS Inquirer
 
 
