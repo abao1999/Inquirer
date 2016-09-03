@@ -27,13 +27,26 @@ block extraStyleSheet
                 fill-opacity: 1;
             }
         }
+        .intro-container .title span {
+            display:none;
+        }
+        @media (max-width: 580px) {
+            .intro-container .title span {
+                display:inherit;
+            }
+            .intro-container .title svg {
+                display:none;
+            }
+        }            
 
 block home
     section.homeintro
         .intro-container
             .title
-                svg(width='600px', height='120px', version='1.1', xmlns='http://www.w3.org/2000/svg')
-                    text#svg_1.path(stroke='white', fill='white', xml:space='preserve', text-anchor='middle', y='90', x='300', stroke-width='1', style='\
+                span BASIS Inquirer
+                //- old svg width='600px' and old text x='300px'
+                svg(width='100%', height='120px', version='1.1', xmlns='http://www.w3.org/2000/svg')
+                    text#svg_1.path(stroke='white', fill='white', xml:space='preserve', text-anchor='middle', y='90', x='50%', stroke-width='1', style='\
                     stroke-dasharray: 1000;\
                     stroke-dashoffset: 1000;\
                     -webkit-animation: dash 5s 0.5s linear alternate both;\
