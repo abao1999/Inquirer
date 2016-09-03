@@ -2,21 +2,44 @@ extends layout
 block extraStyleSheet
     style.
         body {
-          padding: 0;
+            padding: 0;
         }
         .navbar {
-          background: rgba(0, 0, 0, 0);
-          box-shadow: none;
+            background: rgba(0, 0, 0, 0);
+            box-shadow: none;
         }
         footer, .main-container {
-          display: none;
+            display: none;
         }
-        
+        .path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            -webkit-animation: dash 5s 0.5s linear alternate both;
+                font-family: Helvetica Neue;
+        }
+        @-webkit-keyframes dash {
+            from {
+                stroke-dashoffset: 1000;
+                fill-opacity: 0;
+            }
+            to {
+                stroke-dashoffset: 0;
+                fill-opacity: 1;
+            }
+        }
+
 block home
     section.homeintro
         .intro-container
-            .title BASIS Inquirer
-            
+        .title
+            svg(width='600px', height='120px', version='1.1', xmlns='http://www.w3.org/2000/svg')
+                text#svg_1.path(stroke='white', fill='white', xml:space='preserve', text-anchor='middle', y='90', x='300', stroke-width='1', style='\
+                stroke-dasharray: 1000;\
+                stroke-dashoffset: 1000;\
+                -webkit-animation: dash 5s 0.5s linear alternate both;\
+                ') BASIS Inquirer
+
+
 //- block content
 //-     h1 Latest News
 //-     hr
