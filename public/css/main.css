@@ -12,9 +12,53 @@ body {
 .homeintro {
     width: 100vw;
     height: 100vh;
-    background: url('/img/universe1.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/img/universe2.jpg');
     background-size: cover;
+    /*background: url('/img/universe2.jpg');*/
     /*background: #253F3F;*/
+}
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 5s 0.5s linear alternate both;
+    font-family: Helvetica Neue;
+}
+
+/*Chrome, Safari, Opera*/
+
+@-webkit-keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+        fill-opacity: 0;
+    }
+    to {
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
+    }
+}
+
+/*Standard*/
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+        fill-opacity: 0;
+    }
+    to {
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
+    }
+}
+.intro-container .title span {
+    display: none;
+}
+@media (max-width: 580px) {
+    .intro-container .title span {
+        display: inherit;
+    }
+    .intro-container .title svg {
+        display: none;
+    }
 }
 
 /*CONTAINER BLOCK*/
@@ -26,6 +70,7 @@ body {
 /*NAVBAR */
 
 .navbar {
+    /*background: rgba(0, 0, 0, 0);*/
     /*background: rgba(0, 0, 0, 0.3);*/
     background: #253F3F;
 }
@@ -33,7 +78,7 @@ body {
     background: #253F3F;
 }
 .navbar .container {
-    padding-bottom:inherit!important;
+    padding-bottom: inherit!important;
 }
 .navbar .container a {
     color: white;
@@ -46,6 +91,20 @@ body {
 }
 .navbar .dropdown-menu {
     background: #253F3F;
+}
+.navbar-brand {
+    margin-left: 20px!important;
+    /*margin-left: 30px!important;*/
+}
+.navbar-brand img {
+    width: 20px;
+    margin-left: -30px;
+    margin-top: -22px;
+}
+@media (max-width: 768px) {
+    .navbar-default {
+        background: #253f3f!important;
+    }
 }
 
 /*COLUMNS AND TABLES AND ROWS*/
@@ -93,7 +152,6 @@ body {
     height: 100%;
     width: 40%;
 }
-
 @media all and (max-width:760px) {
     .col-sm-12 .entry a img {
         height: auto;
@@ -133,6 +191,13 @@ body {
 .overlay {
     display: none;
 }
+.overlay a {
+    color: white;
+}
+.overlay a i {
+    color: white;
+    margin-top: 55%;
+}
 #issue1:hover #overlay1 {
     width: 100%;
     height: 100%;
@@ -147,12 +212,47 @@ body {
     text-align: center;
     color: white;
 }
-.overlay a {
+#issue2:hover #overlay2 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
     color: white;
 }
-.overlay a i {
+#issue3:hover #overlay3 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
     color: white;
-    margin-top: 55%;
+}
+#issue0:hover #overlay0 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
 }
 
 /*FLYERS in ABOUT US*/
@@ -215,6 +315,7 @@ body {
     display: none;
 }*/
 
+
 /*.overlay a {
     color: white;
 }
@@ -222,6 +323,7 @@ body {
     color: white;
     margin-top: 55%;
 }*/
+
 
 /*HOME PAGE AND PAGE and FORM HEADERS*/
 
@@ -234,10 +336,10 @@ body {
     position: absolute;
 }
 .title {
-  font-size: 6em;
-  color:white;
-  text-align:center;
-  font-style:italic;
+    font-size: 6em;
+    color: white;
+    text-align: center;
+    font-style: italic;
 }
 .page-header {
     padding-bottom: 9px;
@@ -253,10 +355,10 @@ body {
 /*ABOUT US*/
 
 .description-text-block {
-    color:black;
+    color: black;
 }
 .team-list {
-    color:black;
+    color: black;
 }
 
 /*FOOTER*/

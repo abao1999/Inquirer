@@ -2,37 +2,56 @@ extends layout
 block extraStyleSheet
     style.
         body {
-          padding: 0;
+            padding: 0;
         }
+        .navbar {
+            background: rgba(0, 0, 0, 0);
+            box-shadow: none;
+        }
+        footer, .main-container {
+            display: none;
+        }
+
 block home
     section.homeintro
         .intro-container
-            .title BASIS Inquirer
-block content
-    h1 Latest News
-    hr
-    .row
-        .col-sm-6
-            img(src="/img/slide-image3.jpg")
-            h2 Heading
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            p
-                a.btn.btn-default(href='#', role='button') Read More »
-        .col-sm-6
-            img(src="/img/slide-image3.jpg")
-            h2 Heading
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            p
-                a.btn.btn-default(href='#', role='button') Read More »
-        .col-sm-6
-            img(src="/img/slide-image3.jpg")
-            h2 Heading
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            p
-                a.btn.btn-default(href='#', role='button') Read More »
-        .col-sm-6
-            img(src="/img/slide-image3.jpg")
-            h2 Heading
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            p
-                a.btn.btn-default(href='#', role='button') Read More »
+            .title
+                span BASIS Inquirer
+                //- old svg width='600px' and old text x='300px'
+                svg(width='100%', height='120px', version='1.1', xmlns='http://www.w3.org/2000/svg')
+                    text#svg_1.path(stroke='white', fill='white', xml:space='preserve', text-anchor='middle', y='90', x='50%', stroke-width='1', style='\
+                    stroke-dasharray: 1000;\
+                    stroke-dashoffset: 1000;\
+                    -webkit-animation: dash 5s 0.5s linear alternate both;\
+                    animation: dash 5s 0.5s linear alternate both;\
+                    ') BASIS Inquirer
+
+
+//- block content
+//-     h1 Latest News
+//-     hr
+//-     .row
+//-         .col-sm-6
+//-             img(src="/img/slide-image3.jpg")
+//-             h2 Heading
+//-             p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+//-             p
+//-                 a.btn.btn-default(href='#', role='button') Read More »
+//-         .col-sm-6
+//-             img(src="/img/slide-image3.jpg")
+//-             h2 Heading
+//-             p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+//-             p
+//-                 a.btn.btn-default(href='#', role='button') Read More »
+//-         .col-sm-6
+//-             img(src="/img/slide-image3.jpg")
+//-             h2 Heading
+//-             p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+//-             p
+//-                 a.btn.btn-default(href='#', role='button') Read More »
+//-         .col-sm-6
+//-             img(src="/img/slide-image3.jpg")
+//-             h2 Heading
+//-             p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+//-             p
+//-                 a.btn.btn-default(href='#', role='button') Read More »
