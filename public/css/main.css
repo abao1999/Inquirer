@@ -63,6 +63,11 @@ body {
 .browseRow .col-sm-4 {
     height: 300px;
     padding-bottom: 20px;
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+.browseRow .col-sm-4:hover  {
+    opacity:0.8;
 }
 .browseRow .col-sm-4 .panel {
     height: 100%;
